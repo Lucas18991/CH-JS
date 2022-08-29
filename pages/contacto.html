@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="..\Media\img\faviconcacyc.png"> 
+    <!--CSS de forma externa -->
+    <link rel="stylesheet" href="../css/style.css">
+    <title>CACYC-Contacto</title>
+</head>
+<body id="body">
+    <header>
+	<!-- Logo + nav --> 
+	<header>
+        <h1>CACYC--Centro Argentino de Capacitacion y Certificacion</h1>
+		
+		<nav>
+			<a href="..\index.html"><img id=logoheader src="..\Media\img\logo.jpg" alt="Logo CACYC"> </a>
+			<ul class="nav-links">
+				<li class="nav-item"><a href="..\index.html">Home</a></li>
+				<li class="nav-item"><a href="aboutus.html">About Us</a></li>
+				<li class="nav-item"><a href="servicios.html">Servicios</a></li>
+				<li class="nav-item"><a href="cursos.html">Cursos</a></li>
+				<li class="nav-item"><a href="contacto.html">Contacto</a></li>
+			</ul>
+		</nav>
+	</header>
+    <!-- Body del sitio -->
+    </header>
+    	<!-- fila de información de mi sitio -->
+		<h2>CONTACTO</h2>
+	<section>
+		<article id="contacto">
+			<img id="imgcontacto"  src="../Media/img/contact.gif" alt="Contacto CACYC">
+    
+        </article>
+
+    </section>
+
+</section>
+<!-- formulario de contacto -->
+<div class="container">
+	<form id="cont" action="action_page.php">
+  
+	  <label for="Nombre">Nombre</label>
+	  <input type="text" id="Nombre" name="Nombre" placeholder="Tu nombre">
+  
+	  <label for="apellido">Apellido</label>
+	  <input type="text" id="apellido" name="apellido" placeholder="tu Apellido..">
+  
+	  <label for="empresa">Empresa</label>
+	  <input type="text" id="empresa" name="empresa" placeholder="Nombre de tu empresa">
+
+	  <label for="mail">Email</label>
+	  <input type="text" id="mail" name="mail" placeholder="Email">
+  
+	  <label for="asunto">Contenido del mail</label>
+	  <textarea id="asunto" name="asunto" placeholder="Escriba algo.." style="height:200px"></textarea>
+  
+	  <input id="btn"  type="submit" value="Enviar">
+	  <p>
+		Se enviaron <span 
+		id="display">0</span> formularios
+	</p>
+	</form>
+  </div>
+
+  <h5>cantidad de formularios enviados: </h5>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+  <script src="../js/contacto.js"></script>
+
+</body>
+<!-- Footer -->
+<footer>
+    <form action="" method="GET" enctype="multipart/form-data">
+        <fieldset>
+            <legend>Suscribirse al Newsletter:</legend>
+
+            <label for="Newsletter">Mail</label>
+            <input type="email" placeholder="ejemplo@gmail.com">
+
+            <br>
+
+            <br>
+            <input id="btns"  type="submit" value="Suscribirse">
+			
+        </fieldset>
+
+        <a href="#body">Volver al Inicio</a>
+
+
+    </form>
+
+</footer>
+</html>
