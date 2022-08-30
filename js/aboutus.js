@@ -10,5 +10,15 @@ pago
     console.log(e);
   })
   .finally(() => {
-    console.log("esto va siempre");
+    console.log("Nosotros");
   });
+
+let btn = document.querySelector("#btns");
+btn.addEventListener("click", () => {
+  Swal.fire({
+    title: "Exito!",
+    text: "Te has suscripto al Newsletter",
+    icon: "success",
+    confirmButtonText: "OK",
+  });
+});

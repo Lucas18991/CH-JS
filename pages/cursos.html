@@ -39,33 +39,33 @@
 		 <div class="serviciocont">
 				 <div class="servicio">
 					 <h3 class="servicioNombre">Operador de grúas móviles</h3>
-					 <p>Cursos de Operador de grúas móviles</p>
-					 <p class="precio">$4500</p>
+					 <p id="Cursonombre1">Cursos de Operador de grúas móviles</p>
+					 <p id="Cursoprecio1" class="precio"></p>
 					 <button class="adicionarCarro">Adicionar al carro</button>
 				 </div>
 				 <div class="servicio">
 					 <h3 class="servicioNombre">Operador de grúas torre</h3>
-					 <p>Cursos de Operador de grúas torre</p>
-					 <p class="precio">$2200</p>
+					 <p id="Cursonombre2">Cursos de Operador de grúas torre</p>
+					 <p id="Cursoprecio2" class="precio"></p>
 					 <button class="adicionarCarro">Adicionar al carro</button>
 				 </div>
 				 <div class="servicio">
 					 <h3 class="servicioNombre">Conocimientos del supervisor y sus responsabilidades</h3>
-					 <p>Cursos de Conocimientos del supervisor y sus responsabilidades</p>
-					 <p class="precio">$2700</p>
-					 <button class="adicionarCarro">Adicionar al carro</button>
+					 <p id="Cursonombre3">Cursos de Conocimientos del supervisor y sus responsabilidades</p>
+					 <p id="Cursoprecio3" class="precio"></p>
+					 <button id="adicionarCarro" class="adicionarCarro">Adicionar al carro</button>
 				 </div>
 				 <div class="servicio">
 					<h3 class="servicioNombre">Inspección de grúas móviles</h3>
-					<p>Cursos de Inspección de grúas móviles</p>
-					<p class="precio">$4500</p>
-					<button class="adicionarCarro">Adicionar al carro</button>
+					<p id="Cursonombre4">Cursos de Inspección de grúas móviles</p>
+					<p id="Cursoprecio4" class="precio"></p>
+					<button id="adicionarCarro" class="adicionarCarro">Adicionar al carro</button>
 				</div>
 				<div class="servicio">
 					<h3 class="servicioNombre">Eslingaje de cargas</h3>
-					<p>Cursos de Eslingaje de cargas</p>
-					<p class="precio">$2200</p>
-					<button class="adicionarCarro">Adicionar al carro</button>
+					<p id="Cursonombre5">Cursos de Eslingaje de cargas</p>
+					<p id="Cursoprecio5" class="precio"></p>
+					<button id="adicionarCarro" class="adicionarCarro">Adicionar al carro</button>
 				</div>
 				 </div>
 				 <div class="carro-cotenedorr">
@@ -94,7 +94,7 @@
 		 
 					 
 				   <div class="carro-buttons">  
-					 <button id="vaccarro">Vaciar Carrito</button>
+					 <button id="vaciarCarro">Vaciar Carrito</button>
 					 <button id="checkout">Checkout</button>
 				   </div>
 				 </div>
@@ -294,32 +294,43 @@
 		</article>
 	</section>
 
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-	<script src="../js/cursos.js"></script>
-	<button id="btns">submit</button>
 
-</body>
-<!-- Footer -->
-<footer>
-    <form action="" method="GET" enctype="multipart/form-data">
-        <fieldset>
-            <legend>Suscribirse al Newsletter:</legend>
+	
+	<!-- Footer -->
+	<footer>
 
-            <label for="Newsletter">Mail</label>
-            <input type="email" placeholder="ejemplo@gmail.com">
+		<form id="suscripcion" action="" method="GET" enctype="multipart/form-data">
+	   
+		  <fieldset>
+	   
+			<legend>Suscribirse al Newsletter:</legend>
+	   
+			<label for="Newsletter">Mail</label>
+	   
+			<input type="email" placeholder="ejemplo@gmail.com">
+	   
+			<br>
+	   
+			<br>
+	   
+			<button id="btns">Suscribirse</button>
+	   
+		  </fieldset>
+	   
+		  <a href="#body">Volver al Inicio</a>
+	   
+		</form>
+	   
+	   </footer>
+	   
+	   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+	   
+	   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	   
+	   <script src="../js/cursos.js"></script>
+	   
 
-            <br>
-
-            <br>
-            <input id="submit" type="submit" value="Suscribirse">
-			
-        </fieldset>
-
-        <a href="#body">Volver al Inicio</a>
 
 
-    </form>
-
-</footer>
+	</body>
 </html>

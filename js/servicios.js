@@ -1,7 +1,31 @@
 fetch("/servicios.json")
   .then((res) => res.json())
   .then((data) => {
-    console.log(data);
+    const preciosarray1 = data[0].precio;
+    const preciosarray2 = data[1].precio;
+    const preciosarray3 = data[2].precio;
+    const preciosarray4 = data[3].precio;
+    const preciosarray5 = data[4].precio;
+
+    const servicionombre1 = data[0].nombre;
+    const servicionombre2 = data[1].nombre;
+    const servicionombre3 = data[2].nombre;
+    const servicionombre4 = data[3].nombre;
+    const servicionombre5 = data[4].nombre;
+    document.getElementById("servicioprecio1").innerHTML = "$" + preciosarray1;
+    document.getElementById("servicioprecio2").innerHTML = "$" + preciosarray2;
+    document.getElementById("servicioprecio3").innerHTML = "$" + preciosarray3;
+    document.getElementById("servicioprecio4").innerHTML = "$" + preciosarray4;
+    document.getElementById("servicioprecio5").innerHTML = "$" + preciosarray5;
+    document.getElementById("servicionombre1").innerHTML =
+      "Servicio de " + servicionombre1;
+    document.getElementById("servicionombre2").innerHTML =
+      "Servicio de " + servicionombre2;
+    document.getElementById("servicionombre3").innerHTML =
+      "Servicio de " + servicionombre3;
+    document.getElementById("servicionombre4").innerHTML =
+      "Servicio de " + servicionombre4;
+    document.getElementById("servicionombre5").innerHTML = servicionombre5;
   });
 
 let carro = [];
@@ -9,7 +33,7 @@ let carro = [];
 updatecarroTotal();
 
 /* listener para los botones*/
-document.getElementById("vaccarro").addEventListener("click", vaccarro);
+document.getElementById("vaciarCarro").addEventListener("click", vaciarCarro);
 let btns = document.getElementsByClassName("adicionarCarro");
 for (let i = 0; i < btns.length; i++) {
   btns[i].addEventListener("click", function () {
@@ -52,7 +76,7 @@ function adicionarCarro(elem) {
     stringcarro = JSON.stringify(carro);
     //ccrear storage de session
     sessionStorage.setItem("carro", stringcarro);
-    addedTocarro(getservicioNombre);
+    AdicionarCarro(getservicioNombre);
     updatecarroTotal();
   } else {
     //tomar carro y convertir a array
@@ -62,7 +86,7 @@ function adicionarCarro(elem) {
     stringcarro = JSON.stringify(carro);
     //sobrescribir datos en el carro
     sessionStorage.setItem("carro", stringcarro);
-    addedTocarro(getservicioNombre);
+    AdicionarCarro(getservicioNombre);
     updatecarroTotal();
   }
 }
@@ -104,7 +128,7 @@ function updatecarroTotal() {
   document.getElementById("totalItems").innerHTML = items;
 }
 //mensaje cuando se adiciona al carro
-function addedTocarro(pname) {
+function AdicionarCarro(pname) {
   let message = pname + " se adiciono al carro";
   let alerts = document.getElementById("alerts");
   alerts.innerHTML = message;
@@ -113,7 +137,7 @@ function addedTocarro(pname) {
   }
 }
 /* Vaciar carro */
-function vaccarro() {
+function vaciarCarro() {
   //Remueve el storage del carro
   if (sessionStorage.getItem("carro")) {
     sessionStorage.removeItem("carro");
@@ -126,7 +150,7 @@ function vaccarro() {
   }
 }
 
-const btn = document.querySelector("#btns");
+let btn = document.querySelector("#btns");
 btn.addEventListener("click", () => {
   Swal.fire({
     title: "Exito!",
@@ -135,13 +159,33 @@ btn.addEventListener("click", () => {
     confirmButtonText: "OK",
   });
 });
+const botns = document.querySelector("#checkout");
 
-const botns = document.querySelector("#submit");
-botns.addEventListener("click", () => {
-  Swal.fire({
-    title: "Exito!",
-    text: "Te has suscripto al Newsletter",
-    icon: "success",
-    confirmButtonText: "OK",
-  });
+const vaciarCarroq = document.querySelector("#vaciarCarro");
+
+vaciarCarroq.addEventListener("mouseover", () => {
+  carro = sessionStorage.getItem("carro");
+  console.log(carro);
+});
+
+botns.addEventListener("mouseover", () => {
+  carro = sessionStorage.getItem("carro");
+  console.log(carro);
+  carro == null
+    ? botns.addEventListener("click", () => {
+        Swal.fire({
+          title: "Error!",
+          text: "Debe agregar al menos un servicio para el checkout",
+          icon: "error",
+          confirmButtonText: "Volver",
+        });
+      })
+    : botns.addEventListener("click", () => {
+        Swal.fire({
+          title: "Exito!",
+          text: "Felicidades ! Solo queda un paso para obtener tus Servicios",
+          icon: "success",
+          confirmButtonText: "Ir a pagos",
+        });
+      });
 });

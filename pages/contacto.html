@@ -41,7 +41,7 @@
 </section>
 <!-- formulario de contacto -->
 <div class="container">
-	<form id="cont" action="action_page.php">
+	<form id="cont" action="" method="GET">
   
 	  <label for="Nombre">Nombre</label>
 	  <input type="text" id="Nombre" name="Nombre" placeholder="Tu nombre">
@@ -66,31 +66,41 @@
 	</form>
   </div>
 
-  <h5>cantidad de formularios enviados: </h5>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-  <script src="../js/contacto.js"></script>
+  <h5 id="display">cantidad de formularios enviados: </h5>
+  <footer>
+
+	<form id="suscripcion" action="" method="GET" enctype="multipart/form-data">
+   
+	  <fieldset>
+   
+		<legend>Suscribirse al Newsletter:</legend>
+   
+		<label for="Newsletter">Mail</label>
+   
+		<input type="email" placeholder="ejemplo@gmail.com">
+   
+		<br>
+   
+		<br>
+   
+		<button id="btns">Suscribirse</button>
+   
+	  </fieldset>
+   
+	  <a href="#body">Volver al Inicio</a>
+   
+	</form>
+   
+   </footer>
+   
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+   
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+   
+   <script src="../js/contacto.js"></script>
+   
+
+
 
 </body>
-<!-- Footer -->
-<footer>
-    <form action="" method="GET" enctype="multipart/form-data">
-        <fieldset>
-            <legend>Suscribirse al Newsletter:</legend>
-
-            <label for="Newsletter">Mail</label>
-            <input type="email" placeholder="ejemplo@gmail.com">
-
-            <br>
-
-            <br>
-            <input id="btns"  type="submit" value="Suscribirse">
-			
-        </fieldset>
-
-        <a href="#body">Volver al Inicio</a>
-
-
-    </form>
-
-</footer>
 </html>

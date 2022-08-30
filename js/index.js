@@ -11,3 +11,12 @@ let ServiciosEmpresas = {
 const PartEmp = [];
 const seleccEmp = [];
 let x;
+let btn = document.querySelector("#btns");
+btn.addEventListener("click", () => {
+  Swal.fire({
+    title: "Exito!",
+    text: "Te has suscripto al Newsletter",
+    icon: "success",
+    confirmButtonText: "OK",
+  });
+});
