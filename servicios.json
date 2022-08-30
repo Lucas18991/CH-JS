@@ -4,7 +4,7 @@
     {"nombre": "Inspección y certificación de grúas" , "precio":2500 },
     {"nombre": "Evaluación de la seguridad en el sitio de trabajo" , "precio":1700 },
     {"nombre": "Desarrollo de programas específicos sobre seguridad" , "precio":3500 },
-    {"nombre": "Servicios de consulta" , "precio":1200 }
+    {"nombre": "consulta" , "precio":1200 }
 
 ]
 

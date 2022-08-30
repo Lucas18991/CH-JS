@@ -1,31 +1,16 @@
 fetch("/cursos.json")
   .then((res) => res.json())
   .then((data) => {
-    const preciosarray1 = data[0].precio;
-    const preciosarray2 = data[1].precio;
-    const preciosarray3 = data[2].precio;
-    const preciosarray4 = data[3].precio;
-    const preciosarray5 = data[4].precio;
-    const Cursonombre1 = data[0].nombre;
-    const Cursonombre2 = data[1].nombre;
-    const Cursonombre3 = data[2].nombre;
-    const Cursonombre4 = data[3].nombre;
-    const Cursonombre5 = data[4].nombre;
-    document.getElementById("Cursoprecio1").innerHTML = "$" + preciosarray1;
-    document.getElementById("Cursoprecio2").innerHTML = "$" + preciosarray2;
-    document.getElementById("Cursoprecio3").innerHTML = "$" + preciosarray3;
-    document.getElementById("Cursoprecio4").innerHTML = "$" + preciosarray4;
-    document.getElementById("Cursoprecio5").innerHTML = "$" + preciosarray5;
-    document.getElementById("Cursonombre1").innerHTML =
-      "Curso de " + Cursonombre1;
-    document.getElementById("Cursonombre2").innerHTML =
-      "Curso de " + Cursonombre2;
-    document.getElementById("Cursonombre3").innerHTML =
-      "Curso de " + Cursonombre3;
-    document.getElementById("Cursonombre4").innerHTML =
-      "Curso de " + Cursonombre4;
-    document.getElementById("Cursonombre5").innerHTML =
-      "Curso de " + Cursonombre5;
+    for (let i = 0; i < data.length; i++) {
+      let preciosarray = data[i].precio;
+      let cursonombre = data[i].nombre;
+
+      document.getElementById("Cursoprecio" + [i + 1]).innerHTML =
+        "$" + preciosarray;
+
+      document.getElementById("Cursonombre" + [i + 1]).innerHTML =
+        "Curso de " + cursonombre;
+    }
   });
 
 let carro = [{}];

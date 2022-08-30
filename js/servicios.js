@@ -1,31 +1,16 @@
 fetch("/servicios.json")
   .then((res) => res.json())
   .then((data) => {
-    const preciosarray1 = data[0].precio;
-    const preciosarray2 = data[1].precio;
-    const preciosarray3 = data[2].precio;
-    const preciosarray4 = data[3].precio;
-    const preciosarray5 = data[4].precio;
+    for (let i = 0; i < data.length; i++) {
+      let preciosarray = data[i].precio;
+      let servicionombre = data[i].nombre;
 
-    const servicionombre1 = data[0].nombre;
-    const servicionombre2 = data[1].nombre;
-    const servicionombre3 = data[2].nombre;
-    const servicionombre4 = data[3].nombre;
-    const servicionombre5 = data[4].nombre;
-    document.getElementById("servicioprecio1").innerHTML = "$" + preciosarray1;
-    document.getElementById("servicioprecio2").innerHTML = "$" + preciosarray2;
-    document.getElementById("servicioprecio3").innerHTML = "$" + preciosarray3;
-    document.getElementById("servicioprecio4").innerHTML = "$" + preciosarray4;
-    document.getElementById("servicioprecio5").innerHTML = "$" + preciosarray5;
-    document.getElementById("servicionombre1").innerHTML =
-      "Servicio de " + servicionombre1;
-    document.getElementById("servicionombre2").innerHTML =
-      "Servicio de " + servicionombre2;
-    document.getElementById("servicionombre3").innerHTML =
-      "Servicio de " + servicionombre3;
-    document.getElementById("servicionombre4").innerHTML =
-      "Servicio de " + servicionombre4;
-    document.getElementById("servicionombre5").innerHTML = servicionombre5;
+      document.getElementById("servicioprecio" + [i + 1]).innerHTML =
+        "$" + preciosarray;
+
+      document.getElementById("servicionombre" + [i + 1]).innerHTML =
+        "Servicio de " + servicionombre;
+    }
   });
 
 let carro = [];
